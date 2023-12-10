@@ -37,7 +37,9 @@ var drawControl = new L.Control.Draw({
     }
 });
 map.addControl(drawControl);
-L.control.measure().addTo(map);
+
+var searchControl = L.Control.geocoder().addTo(map);
+document.getElementById('search-bar').appendChild(searchControl.getContainer());
 
 document.getElementById('area-value').textContent = '0';
 map.on('draw:created', function (e) {
@@ -46,33 +48,7 @@ map.on('draw:created', function (e) {
     drawnItems.addLayer(layer);
     updateAreaDisplay(layer);
 });
-var searchControl = L.Control.geocoder().addTo(map);
-        document.getElementById('search-bar').appendChild(searchControl.getContainer());
 
-        document.getElementById('area-value').textContent = '0';
-        map.on('draw:created', function (e) {
-            var layer = e.layer;
-            drawnItems.clearLayers();
-            drawnItems.addLayer(layer);
-            updateAreaDisplay(layer);
-        });
-        var searchControl = L.Control.geocoder().addTo(map);
-        document.getElementById('search-bar').appendChild(searchControl.getContainer());
-
-        document.getElementById('area-value').textContent = '0';
-        map.on('draw:created', function (e) {
-            var layer = e.layer;
-            drawnItems.clearLayers();
-            drawnItems.addLayer(layer);
-            updateAreaDisplay(layer);
-        });
-
-        function updateAreaDisplay(layer) {
-            if (layer instanceof L.Polygon) {
-                var area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
-                document.getElementById('area-value').textContent = area.toFixed(2);
-            }
-        }
 function updateAreaDisplay(layer) {
     if (layer instanceof L.Polygon) {
         var area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
