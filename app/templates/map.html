@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLGIS</title>
+    <link rel="icon" href="{% static 'images/form.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw"></script>
+    <script src="https://unpkg.com/leaflet-editable"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    
+    <h1>SOLAR SIMULATOR</h1>
+    <div class="container">
+        
+        <div class="small">
+            
+            <label for="slope-roof" id="slope-label-roof" name="slope-roof" >Slope of the roof</label>
+            <select id="slope-roof" name="slope-roof">
+                <option value="flat">Flat (0-5°)</option>
+                <option value="slightly">Slightly Inclined (5-10°)</option>
+                <option value="inclined">Inclined (10-20°)</option>
+                <option value="very">Very İnclined (+20°)</option>
+                <option value="dont-know">If you are not sure</option>
+            </select>
+    
+            <!-- Add the following div for displaying the selected value -->
+            <div id="selected-value"></div>
+    
+            <!-- Add an input box for "If you are not sure" option -->
+            <div id="input-box-container" style="display: none; margin-top: 8px;">
+                <label for="not-sure-input">Enter your value:</label>
+                <input type="text" id="not-sure-input">
+            </div>
+    
+            <label for="position">Position</label>
+            <select id="position-roof" name="position-roof" >
+                <option value="north">North</option>
+                <option value="south">South</option>
+                <option value="east">East</option>
+                <option value="west">West</option>
+                <option value="northeast">Northeast</option>
+                <option value="northwest">Northwest</option>
+                <option value="southeast">Southeast</option>
+                <option value="southwest">Southwest</option>
+            </select>
+            <div class="slidecontainer">
+                <p>What was your last electric bill:</p>
+                <input id='myRange' type="range" min="1" max="3000" value="1500">
+                <p>TL(Turkis Lira): <span id="demo"></span></p>
+            </div>
+            <button id="calculate-button" onclick="calculatePanels()">Calculate</button>
+            <div id="area-display">Area: <span id="area-value">0</span> m² </div>
+            
+        </div>
+        <div class="mapc">
+            <div id="map"></div>
+        </div>
+    </div>
+    <div id="result-container"></div>
+    <div id="calculation-results"></div>
+    <script src="{% static 'app/js/script.js' %}"></script>
+    {% include 'footer.html' %}
+</body>
+
+
+</html>

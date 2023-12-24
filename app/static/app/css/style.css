@@ -1,0 +1,353 @@
+.leaflet-editing-icon {
+    background-color: rgb(0, 55, 105); /* Blue */
+    border-radius: 50%;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffffff; /* Dark Blue */
+    color: #ffffff; /* White */
+    font-family: 'Times New Roman', Times, serif;
+}
+#result-container{
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    
+}
+#map {
+    display: flex;
+    height: 95%;
+    width: 95%;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black ;
+    border-radius: 10px;
+   
+}
+
+#area-display {
+    background-color: rgb(0, 55, 105); /* Dark Blue */
+    color: #ffffff; /* White */
+    padding: 10px;
+    border: 2px solid rgb(0, 55, 105); /* Blue */
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10%;
+    width: 40%;
+}
+#slope-roof {
+    display: block;
+    margin-bottom: 3px;
+}
+#search-bar {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    z-index: 1000;
+    color: #ffffff; /* White */
+}
+
+
+
+button {
+    background-color: rgb(0, 55, 105); /* Blue */
+    color: #ffffff; /* White */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.clickable-logo {
+    padding-top: 20px;
+    padding-bottom: 2%;
+    margin-right: auto;
+    width: 150px;
+}
+.header-logo {
+    width: 100%;
+}
+button:hover {
+    background-color: rgb(0, 55, 105); /* Dark Blue */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 55, 105);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Spreads the items horizontally */
+    width: 100%;
+    z-index: 10000; /* Ensure the header is above other elements */
+}
+
+.menu {
+    
+    align-items: center; /* Center vertically */
+    
+}
+
+.header a {
+    color: #ffffff; 
+    text-decoration: none;
+    margin: 0 15px;
+    
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.header-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2980b9; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.header-dropdown:hover .header-dropdown-content {
+    display: block;
+}
+
+.header-dropdown-content a {
+    color: #ffffff; 
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.header-dropdown-content a:hover {
+    background-color: #2980b9; 
+    text-decoration: underline;
+}
+
+.coordinates, .go {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.coordinates {
+    color: black;
+}
+
+h1, h2 {
+    margin-top: 6%;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size:25px;
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+    font-family:'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover styles */
+button:hover {
+    background-color: rgb(0, 55, 105);
+    color: #fff;
+    font-family:'Times New Roman', Times, serif;
+    border: 1px solid #ffffff;
+    
+    
+}
+.footer-container {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+
+footer {
+    background-color: rgb(0, 55, 105);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+footer a:hover {
+    text-decoration: underline;
+  }
+
+.powered-by {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 0%;
+    color: #000000;
+}
+
+.calculator-container {
+    background-color: #ffffff;
+    padding: 40px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: auto; /* Center the container horizontally */
+    margin-top: 6%; /* Add margin-top */
+    margin-bottom: 20px; /* Add margin-bottom */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+select {
+    width: 80%;
+    padding: 10px; 
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: rgb(0, 55, 105);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Add a transition for a smooth effect */
+}
+
+button:hover {
+    background-color: #297fb8; /* Change the background color on hover */
+}
+
+
+#calculation-results{
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 5%;
+    margin-top: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#demo{
+    color: #000000;
+}
+.mapc{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.small{
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 40%;
+    display: inline-block;
+    height: 600px;
+}
+.leaflet-control-geocoder{
+    width: 100%;
+    height: 35px;
+}
+.leaflet-control-geocoder-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.leaflet-control-geocoder-icon img {
+    margin-right: 8px; 
+    width: 100%;
+}
+
+.homepic{
+    width: 100%;
+}
+.slidecontainer {
+    width: 100%;
+    color: #000000;
+}
+
+.slider {
+-webkit-appearance: none;
+width: 100%;
+height: 25px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider:hover {
+opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
+}
