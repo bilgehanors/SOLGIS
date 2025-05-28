@@ -26,12 +26,13 @@
     {% include 'header.html' %}
     
     <h1>SOLAR SIMULATOR</h1>
+    
     <div class="container">
         
         <div class="small">
             
             <label for="slope-roof" id="slope-label-roof" name="slope-roof" >Slope of the roof</label>
-            <select id="slope-roof" name="slope-roof">
+            <select id="slope-roof" name="slope-roof" onchange="handleSlopeChange()">
                 <option value="flat">Flat (0-5°)</option>
                 <option value="slightly">Slightly Inclined (5-10°)</option>
                 <option value="inclined">Inclined (10-20°)</option>
@@ -39,10 +40,8 @@
                 <option value="dont-know">If you are not sure</option>
             </select>
     
-            <!-- Add the following div for displaying the selected value -->
             <div id="selected-value"></div>
     
-            <!-- Add an input box for "If you are not sure" option -->
             <div id="input-box-container" style="display: none; margin-top: 8px;">
                 <label for="not-sure-input">Enter your value:</label>
                 <input type="text" id="not-sure-input">
@@ -60,9 +59,9 @@
                 <option value="southwest">Southwest</option>
             </select>
             <div class="slidecontainer">
-                <p>What was your last electric bill:</p>
+                <p style="color: black;">What was your last electric bill:</p>
                 <input id='myRange' type="range" min="1" max="3000" value="1500">
-                <p>TL(Turkis Lira): <span id="demo"></span></p>
+                <p style="color: black;">TL(Turkis Lira): <span id="demo"></span></p>
             </div>
             <button id="calculate-button" onclick="calculatePanels()">Calculate</button>
             <div id="area-display">Area: <span id="area-value">0</span> m² </div>
@@ -71,12 +70,17 @@
         <div class="mapc">
             <div id="map"></div>
         </div>
+        <div id="result-container"  style="color: black;"></div>
     </div>
-    <div id="result-container"></div>
-    <div id="calculation-results"></div>
-    <script src="{% static 'app/js/script.js' %}"></script>
+    
+    
     {% include 'footer.html' %}
 </body>
 
+<script src="{% static 'app/js/script.js' %}?v=2"></script>
+
+
+
 
 </html>
+
